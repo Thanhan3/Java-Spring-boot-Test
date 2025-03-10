@@ -16,17 +16,16 @@ import com.javaweb.model.ErrorResponseDTO;
 
 @ControllerAdvice
 public class ControllerAdvisor extends ResponseEntityExceptionHandler {
-	
+
 	@ExceptionHandler(FieldRequiredExeption.class)
 	public ResponseEntity<Object> handleArgumentNotValid(FieldRequiredExeption ex, WebRequest request) {
-		
+
 		ErrorResponseDTO errorResponse = new ErrorResponseDTO();
 		errorResponse.setError(ex.getMessage());
 		List<String> details = new ArrayList<String>();
 		details.add("Số nhà hoặc tên đang bị bỏ trống!!");
 		errorResponse.setDetails(details);
-		return new ResponseEntity<>(errorResponse , HttpStatus.BAD_GATEWAY);
+		return new ResponseEntity<>(errorResponse, HttpStatus.BAD_GATEWAY);
 	}
-	
-	
+
 }
