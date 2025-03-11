@@ -1,6 +1,5 @@
 package com.javaweb.repository.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class BuildingEntity {
@@ -9,13 +8,13 @@ public class BuildingEntity {
 	private String name;
 	private String street;
 	private String ward;
-	private DistrictEntity district;
+	private long districtId;
 	private String structure;
 	private Integer numberOfBasement;
-	private Integer floorArea;
+	private long floorArea;
 	private String direction;
 	private String level;
-	private Integer rentPrice;
+	private long rentPrice;
 	private String rentPriceDescription;
 	private String serviceFee;
 	private String carFee;
@@ -27,7 +26,7 @@ public class BuildingEntity {
 	private String payment;
 	private String rentTime;
 	private String decorationTime;
-	private BigDecimal brokerageFee;
+	private long brokerageFee;
 	private String note;
 	private String linkOfBuilding;
 	private String map;
@@ -71,12 +70,12 @@ public class BuildingEntity {
 		this.ward = ward;
 	}
 
-	public DistrictEntity getDistrict() {
-		return district;
+	public Long getDistrictId() {
+		return districtId;
 	}
 
-	public void setDistrict(DistrictEntity district) {
-		this.district = district;
+	public void setDistrictId(long districtId) {
+		this.districtId = districtId;
 	}
 
 	public String getStructure() {
@@ -95,11 +94,11 @@ public class BuildingEntity {
 		this.numberOfBasement = numberOfBasement;
 	}
 
-	public Integer getFloorArea() {
+	public Long getFloorArea() {
 		return floorArea;
 	}
 
-	public void setFloorArea(Integer floorArea) {
+	public void setFloorArea(long floorArea) {
 		this.floorArea = floorArea;
 	}
 
@@ -119,11 +118,11 @@ public class BuildingEntity {
 		this.level = level;
 	}
 
-	public Integer getRentPrice() {
+	public long getRentPrice() {
 		return rentPrice;
 	}
 
-	public void setRentPrice(Integer rentPrice) {
+	public void setRentPrice(long rentPrice) {
 		this.rentPrice = rentPrice;
 	}
 
@@ -215,11 +214,11 @@ public class BuildingEntity {
 		this.decorationTime = decorationTime;
 	}
 
-	public BigDecimal getBrokerageFee() {
+	public long getBrokerageFee() {
 		return brokerageFee;
 	}
 
-	public void setBrokerageFee(BigDecimal brokerageFee) {
+	public void setBrokerageFee(long brokerageFee) {
 		this.brokerageFee = brokerageFee;
 	}
 
