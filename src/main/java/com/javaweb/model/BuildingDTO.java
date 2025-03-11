@@ -8,21 +8,18 @@ public class BuildingDTO {
 	public String getName() {
 		return name;
 	}
-	
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public Integer getNumberOfBasement() {
 		return numberOfBasement;
 	}
-	
+
 	public void setNumberOfBasement(Integer numberOfBasement) {
 		this.numberOfBasement = numberOfBasement;
 	}
-
 
 	public String getAddressString() {
 		return addressString;
@@ -31,6 +28,5 @@ public class BuildingDTO {
 	public void setAddressString(String addressString) {
 		this.addressString = addressString;
 	}
-
 
 }
