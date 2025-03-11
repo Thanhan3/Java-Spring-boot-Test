@@ -28,16 +28,16 @@ public class BuildingAPI {
 		return result;
 	}
 
-	public void validate(BuildingDTO buildingDTO) {
-		if (buildingDTO.getName() == null || buildingDTO.getName().equals("")
-				|| buildingDTO.getNumberOfBasement() == null) {
-			throw new FieldRequiredExeption("name or numberOfBasement is null");
-		}
-	}
+//	public void validate(BuildingDTO buildingDTO) {
+//		if (buildingDTO.getName() == null || buildingDTO.getName().equals("")
+//				|| buildingDTO.getNumberOfBasement() == null) {
+//			throw new FieldRequiredExeption("name or numberOfBasement is null");
+//		}
+//	}
 
 	@PostMapping("/api/buildings/")
 	public Object createBuilding(@RequestBody BuildingDTO buildingDTO) {
-		validate(buildingDTO);
+		//validate(buildingDTO);
 		BuildingDTO result = new BuildingDTO();
 		return result;
 	}
