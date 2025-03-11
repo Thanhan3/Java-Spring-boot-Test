@@ -3,7 +3,6 @@ package com.javaweb.repository.entity;
 import java.util.Date;
 
 public class BuildingEntity {
-
 	private Long id;
 	private String name;
 	private String street;
