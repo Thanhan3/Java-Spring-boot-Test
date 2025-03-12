@@ -1,41 +1,148 @@
 package com.javaweb.repository.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "building")
 public class BuildingEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
+
+	@Column(name = "name")
 	private String name;
+
+	@Column(name = "street")
 	private String street;
+
+	@Column(name = "ward")
 	private String ward;
-	private long districtId;
+
+	@Column(name = "structure")
 	private String structure;
+
+	@Column(name = "numberofbasement")
 	private Integer numberOfBasement;
-	private long floorArea;
+
+	@Column(name = "floorarea")
+	private Long floorArea;
+
+	@Column(name = "direction")
 	private String direction;
+
+	@Column(name = "level")
 	private String level;
-	private long rentPrice;
+
+	@Column(name = "rentprice")
+	private Long rentPrice;
+
+	@Column(name = "rentpricedescription")
 	private String rentPriceDescription;
+
+	@Column(name = "servicefee")
 	private String serviceFee;
+
+	@Column(name = "carfee")
 	private String carFee;
+
+	@Column(name = "motorbikefee")
 	private String motorbikeFee;
+
+	@Column(name = "overtimefee")
 	private String overtimeFee;
+
+	@Column(name = "waterfee")
 	private String waterFee;
+
+	@Column(name = "electricityfee")
 	private String electricityFee;
+
+	@Column(name = "deposit")
 	private String deposit;
+
+	@Column(name = "payment")
 	private String payment;
+
+	@Column(name = "renttime")
 	private String rentTime;
+
+	@Column(name = "decorationtime")
 	private String decorationTime;
-	private long brokerageFee;
+
+	@Column(name = "brokeragefee")
+	private Long brokerageFee;
+
+	@Column(name = "note")
 	private String note;
+
+	@Column(name = "linkofbuilding")
 	private String linkOfBuilding;
+
+	@Column(name = "map")
 	private String map;
+
+	@Column(name = "image")
 	private String image;
+
+	@Column(name = "createddate")
 	private Date createdDate;
+
+	@Column(name = "modifieddate")
 	private Date modifiedDate;
+
+	@Column(name = "createdby")
 	private String createdBy;
+
+	@Column(name = "modifiedby")
 	private String modifiedBy;
+
+	@Column(name = "managername")
 	private String managerName;
+
+	@Column(name = "managerphonenumber")
 	private String managerPhoneNumber;
+	
+	@ManyToOne
+	@JoinColumn(name ="districtid")
+	private DistrictEntity district;
+	
+	
+    
+    @OneToMany(mappedBy = "building" , fetch = FetchType.LAZY)
+    private List<RentAreaEntity> items = new ArrayList<>();
+    
+    
+	
+
+	public List<RentAreaEntity> getItems() {
+		return items;
+	}
+
+	public void setItems(List<RentAreaEntity> items) {
+		this.items = items;
+	}
+
+	public DistrictEntity getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(DistrictEntity district) {
+		this.district = district;
+	}
 
 	public Long getId() {
 		return id;
@@ -73,7 +180,7 @@ public class BuildingEntity {
 		return districtId;
 	}
 
-	public void setDistrictId(long districtId) {
+	public void setDistrictId(Long districtId) {
 		this.districtId = districtId;
 	}
 
@@ -97,7 +204,7 @@ public class BuildingEntity {
 		return floorArea;
 	}
 
-	public void setFloorArea(long floorArea) {
+	public void setFloorArea(Long floorArea) {
 		this.floorArea = floorArea;
 	}
 
@@ -117,11 +224,11 @@ public class BuildingEntity {
 		this.level = level;
 	}
 
-	public long getRentPrice() {
+	public Long getRentPrice() {
 		return rentPrice;
 	}
 
-	public void setRentPrice(long rentPrice) {
+	public void setRentPrice(Long rentPrice) {
 		this.rentPrice = rentPrice;
 	}
 
@@ -213,11 +320,11 @@ public class BuildingEntity {
 		this.decorationTime = decorationTime;
 	}
 
-	public long getBrokerageFee() {
+	public Long getBrokerageFee() {
 		return brokerageFee;
 	}
 
-	public void setBrokerageFee(long brokerageFee) {
+	public void setBrokerageFee(Long brokerageFee) {
 		this.brokerageFee = brokerageFee;
 	}
 

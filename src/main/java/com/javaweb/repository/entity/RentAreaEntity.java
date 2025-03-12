@@ -1,17 +1,47 @@
 package com.javaweb.repository.entity;
 
-import java.util.List;
+import javax.annotation.Generated;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "rentarea")
 public class RentAreaEntity {
-	private List<String> areas;
-
-	public List<String> getAreas() {
-		return areas;
-	}
-
-	public void setAreas(List<String> areas) {
-		this.areas = areas;
-	}
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
+	@Column(name = "value")
+	private String value;
+	
+	
+	@ManyToOne
+	@JoinColumn(name ="buildingid")
+	private BuildingEntity building;
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+
 	
 }

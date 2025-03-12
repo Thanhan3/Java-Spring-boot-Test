@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javaweb.customexception.FieldRequiredExeption;
 import com.javaweb.model.BuildingDTO;
 import com.javaweb.service.BuildingService;
 
 @RestController
+
 public class BuildingAPI {
 	@Autowired
 	private BuildingService buildingService;
